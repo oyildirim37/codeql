@@ -48,3 +48,8 @@ Dieses Dokument beschreibt die Schritte, um das Loop-Projekt (konkret: den **Loo
    ```bash
    sudo xcode-select -s /Applications/Xcode-15.4.app
    xcodebuild -version
+
+4. Erwartete Ausgabe
+    ```bash
+   Xcode 15.4
+   Build version 15F31d
