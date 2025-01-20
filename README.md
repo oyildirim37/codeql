@@ -53,3 +53,18 @@ Dieses Dokument beschreibt die Schritte, um das Loop-Projekt (konkret: den **Loo
     ```bash
    Xcode 15.4
    Build version 15F31d
+
+### 3.2 Simulator-Runtime installieren
+1. In Xcode (15.4) unter “Settings → Platforms” die gewünschte iOS-Version (z. B. 17.2) installieren.
+2. Anschließend ist ein Simulator wie „iPhone 15 (17.2)“ verfügbar.
+
+### 3.3 CodeQL-CLI
+1. Herunterladen der CodeQL-CLI-Binaries von von [github.com/github/codeql-cli-binaries/releases.](https://github.com/github/codeql-cli-binaries/releases./).
+2. Entpacken, z. B. nach ~/codeql.
+3. Prüfung:
+    ```bash
+   Xcode 15.4
+   Build version 15F31d
+
+
+
