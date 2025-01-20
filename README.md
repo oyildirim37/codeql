@@ -66,5 +66,48 @@ Dieses Dokument beschreibt die Schritte, um das Loop-Projekt (konkret: den **Loo
    Xcode 15.4
    Build version 15F31d
 
+## 4. Erstellung der CodeQL-Datenbank
+### 4.1 Projekt bereinigen
+
+1. Im Vorfeld empfiehlt sich das Löschen von alten DerivedData:
+   ```bash
+      rm -rf ~/Library/Developer/Xcode/DerivedData/LoopWorkspace-*
+
+
+### 4.2 Datenbank-Build
+1. Im LoopWorkspace-Verzeichnis den CodeQL-Befehl ausführen:
+      ```bash
+   codeql database create myDatabase \
+     --language=swift \
+     --command "xcodebuild \
+    -workspace LoopWorkspace.xcworkspace \
+    -scheme LoopWorkspace \
+    -sdk iphonesimulator \
+    -destination 'platform=iOS Simulator,id=D523B73E-BB82-4E80-AE38-8984ED513004,OS=17.5' \
+    -configuration Debug \
+    clean build" \
+     --overwrite
+2. Dabei die richtige id für den Simulator verwenden, ermittelt über:
+   ```bash
+      xcodebuild -workspace LoopWorkspace.xcworkspace \
+           -scheme LoopWorkspace \
+           -showdestinations
+
+
+3. myDatabase ist das Zielverzeichnis der CodeQL-Datenbank.
+
+4. --overwrite überschreibt eine eventuell vorhandene Datenbank gleichen Namens.
+5. Ergebnis: Nach Abschluss erscheint:
+
+    ```bash
+      ** BUILD SUCCEEDED **
+   Finalizing database at /.../myDatabase
+   Successfully created database at /.../myDatabase
+
+
+
+
+
+
 
 
