@@ -107,6 +107,51 @@ Dieses Dokument beschreibt die Schritte, um das Loop-Projekt (konkret: den **Loo
 
 
 
+## 5. Kurzer Test mit einer Beispiel-Query
+
+**Im Folgenden ein minimaler Test, der alle Force-Unwraps (!) in Swift auflistet:**
+1. Eine Datei ForceUnwrap.ql anlegen:
+    ```bash
+     import Swift
+
+   from ForceUnwrapExpression f
+   select f, "Force unwrap here."
+
+2. Anschließend im Terminal die Query gegen die Datenbank laufen lassen:
+   ```bash
+     codeql query run ForceUnwrap.ql \
+     --database=myDatabase \
+     --output=forceunwrap.bqrs
+
+
+3. Die Ergebnisse decodebar machen:
+     ```bash
+        codeql bqrs decode forceunwrap.bqrs
+4. Es werden Positionen der !-Verwendung angezeigt.
+
+
+
+## 6. Typische Fehlerquellen
+1.   ```bash
+        libSwiftSyntax.dylib missing:
+Tritt in Xcode 16.x und iOS 16/17 auf. Siehe oben, durch Xcode 15.4 gelöst.
+
+2. Destination muss folgende Form haben:
+   ```bash
+        platform=iOS Simulator,id=...,OS=...'
+3. Simulator nicht installiert: iOS 17.5 in Xcode Settings laden.
+4. Zeilenumbruch: In Bash kann ein falscher Backslash zum Fehler Unknown build action '\' führen. Besser in einer Zeile oder sauberer Shell-Quote.
+5. Konflikte bei alten DerivedData: Vor Neuversuchen DerivedData des Projektes löschen mit:
+    ```bash
+        rm -rf ~/Library/Developer/Xcode/DerivedData/LoopWorkspace-*
+
+
+
+
+
+
+
+
 
 
 
