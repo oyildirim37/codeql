@@ -59,7 +59,7 @@ Dieses Dokument beschreibt die Schritte, um das Loop-Projekt (konkret: den **Loo
 2. Anschließend ist ein Simulator wie „iPhone 15 (17.2)“ verfügbar.
 
 ### 3.3 CodeQL-CLI
-1. Herunterladen der CodeQL-CLI-Binaries von von [github.com/github/codeql-cli-binaries/releases.](https://github.com/github/codeql-cli-binaries/releases./).
+1. Herunterladen der CodeQL-CLI-Binaries von von ([https://github.com/github/codeql-cli-binaries/releases./](https://github.com/github/codeql-cli-binaries)).
 2. Entpacken, z. B. nach ~/codeql.
 3. Prüfung:
     ```bash
