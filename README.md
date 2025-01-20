@@ -1,4 +1,4 @@
-#CodeQL-Datenbankerstellung für Loop (Swift)
+# CodeQL-Datenbankerstellung für Loop (Swift)
 
 ## Zweck und Ablauf
 
